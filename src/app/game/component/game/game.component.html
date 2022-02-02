@@ -1,1 +1,99 @@
-<p>game works!</p>
+
+<div id="full-height">
+    <div class="progress" >
+        <div class="progress-bar" role="progressbar" [style.width]="progreso + '%'"  aria-valuemin="0" aria-valuemax="100"></div>    
+    </div>
+    <div class="grid-container">
+
+        
+        <span class="dot" style="background-color: #009e7d;"></span>
+        <span> </span>
+        <span class="dot" style="background-color: #009e7d;"></span>
+        <span></span>
+        <span class="dot" style="background-color: #009e7d;"></span>
+        <span></span>
+        <span class="dot" style="background-color: #009e7d;"></span>
+        <span></span>
+        <span class="dot" style="background-color: white;"></span>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <p align="center">{{texto}}  <span [style.color]="color+''">{{color}} </span> </p>
+        <br>
+        <br>
+        <br>
+        <div class="container">
+            <div class="center">
+                <button type="button" class="btn btn-warning btn-circle btn-xl"></button>
+                <button type="button" class="btn btn-warning btn-circle btn-xl"></button>
+                <button type="button" class="btn btn-warning btn-circle btn-xl"></button>
+            </div>
+        </div>
+        
+        <div class="container">
+            <div class="center" *ngIf="selecciono">
+                
+                <!---* Color 1 -->
+                <div *ngIf="selecciono1">
+                    <div *ngIf="estado1 ;then content1 else other_content1"></div>
+                    <ng-template #content1>
+                        
+                        <button mat-mini-fab style="background-color: green; color:white; margin-right: 20px; margin-left: 70px;margin-top: 30px;" >
+                            <mat-icon>done</mat-icon>
+                        </button>
+                        
+                    </ng-template>
+                    <ng-template #other_content1>
+                        <button mat-mini-fab style="background-color: red; color:white; margin-right: 20px; margin-left: 70px;margin-top: 30px;" >
+                            <mat-icon>close</mat-icon>
+                        </button>
+                    </ng-template>
+
+                </div>
+                
+                
+                <!---* Color 2 -->
+                <div *ngIf="selecciono2">
+                    <div *ngIf="estado2;then content2 else other_content2"></div>
+                    <ng-template #content2>
+                        
+                        <button mat-mini-fab style="background-color: green; color:white; margin-right: 20px; margin-left: 70px;margin-top: 30px;" >
+                            <mat-icon>done</mat-icon>
+                        </button>
+                        
+                    </ng-template>
+                    <ng-template #other_content2>
+                        <button mat-mini-fab style="background-color: red; color:white; margin-right: 20px; margin-left: 70px;margin-top: 30px;" >
+                            <mat-icon>close</mat-icon>
+                        </button>
+                    </ng-template>
+                </div>
+
+                <!---* Color 3 -->
+                <div *ngIf="selecciono3">
+                    <div *ngIf="estado3;then content3 else other_content3"></div>
+                    <ng-template #content3>
+                        
+                        <button mat-mini-fab style="background-color: green; color:white; margin-right: 20px; margin-left: 70px;margin-top: 30px;" >
+                            <mat-icon>done</mat-icon>
+                        </button>
+                        
+                    </ng-template>
+                    <ng-template #other_content3>
+                        <button mat-mini-fab style="background-color: red; color:white; margin-right: 20px; margin-left: 70px;margin-top: 30px;" >
+                            <mat-icon>close</mat-icon>
+                        </button>
+                    </ng-template>
+                </div>
+            </div>
+        </div>
+        
+       
+        
+    
+    </div>
+</div>
+
+
