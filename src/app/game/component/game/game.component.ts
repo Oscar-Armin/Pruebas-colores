@@ -57,8 +57,9 @@ export class GameComponent implements OnInit {
     contador.subscribe( (n) =>{
       //si no ha terminado el juego siga moviendo el tiempo
       if(!this.mostrandoResultados) {
+
         
-        if(this.intento !== 5){
+        if(this.intento !==5 ){
         
           if (this.selecciono){
             this.progreso -= 20;
@@ -75,11 +76,14 @@ export class GameComponent implements OnInit {
             this.jugados[this.intento] =1;
             
             this.intento++;
+            if (this.intento !==5){
+              this.colores= this.logicaService.getColors();
+              this.texto = this.logicaService.getCondicion();
+              this.color = this.getColorCondicion();
+            }
             
             
-            this.colores= this.logicaService.getColors();
-            this.texto = this.logicaService.getCondicion();
-            this.color = this.getColorCondicion();
+            
   
             //si no selecciono paso el intento
   
@@ -92,12 +96,13 @@ export class GameComponent implements OnInit {
         }else{
           this.intento =0;
           this.jugados.fill(0)
-          console.log("Termino el juego");
           //redirecciono a resultado (muestro modal/pop-up)
           this.mostrarResultados();
   
           
         }
+
+
       }
       
 
@@ -149,7 +154,7 @@ export class GameComponent implements OnInit {
       }
 
     }
-    console.log(this.porcentaje)
+    
   }
   
   mostrarResultados(){

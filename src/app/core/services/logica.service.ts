@@ -9,7 +9,7 @@ export class LogicaService {
 
   frases: Frase[]=[
     {
-      title:"Seleccione el color",
+      title:"Selecciona el color",
       valor:true
     },
     {
@@ -29,7 +29,7 @@ export class LogicaService {
       title: 'rojo'
     },
     {
-      color: 'Green',
+      color: 'YellowGreen',
       title: 'verde'
     },
     {
@@ -37,15 +37,15 @@ export class LogicaService {
       title: 'amarillo'
     },
     {
-      color: 'Orange',
+      color: 'DarkOrange',
       title: 'anaranjado'
     },
     {
-      color: 'Brown',
+      color: 'SaddleBrown',
       title: 'café'
     },
     {
-      color: 'LightBlue',
+      color: 'SkyBlue',
       title: 'celeste'
     },
     {
@@ -53,12 +53,16 @@ export class LogicaService {
       title: 'rosado'
     },
     {
-      color: 'Purple',
+      color: 'DarkViolet',
       title: 'morado'
+    },
+    {
+      color: 'MediumBlue',
+      title: 'azul'
     },
 
   ];
-
+  
 
 
   constructor() { }
