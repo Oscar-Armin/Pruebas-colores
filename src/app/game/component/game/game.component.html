@@ -3,93 +3,93 @@
     <div class="progress" >
         <div class="progress-bar" role="progressbar" [style.width]="progreso + '%'"  aria-valuemin="0" aria-valuemax="100"></div>    
     </div>
+    <div *ngFor="let juego of jugados" style="display: inline-block;">
+        <span class="dot" [style.background-color]= " juego ===0 ? 'white' : '#009e7d'  "></span>
+     
+    </div>
+
     <div class="grid-container">
+ 
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <p align="center">{{texto.title}}  <span [style.color]="color.color">{{color.title}} </span> </p>
+        <br>
+        <br>
+     
 
-        
-        <span class="dot" style="background-color: #009e7d;"></span>
-        <span> </span>
-        <span class="dot" style="background-color: #009e7d;"></span>
-        <span></span>
-        <span class="dot" style="background-color: #009e7d;"></span>
-        <span></span>
-        <span class="dot" style="background-color: #009e7d;"></span>
-        <span></span>
-        <span class="dot" style="background-color: white;"></span>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <p align="center">{{texto}}  <span [style.color]="color+''">{{color}} </span> </p>
-        <br>
-        <br>
-        <br>
-        <div class="container">
-            <div class="center">
-                <button type="button" class="btn btn-warning btn-circle btn-xl"></button>
-                <button type="button" class="btn btn-warning btn-circle btn-xl"></button>
-                <button type="button" class="btn btn-warning btn-circle btn-xl"></button>
+        <div class="container" >
+            <div class="row" style="justify-content: center; margin:0 auto;" >
+                
+                <div class="col col-lg-1" *ngFor="let color of colores; index as i">
+                    <button type="button" [style.background-color]="color.color" class="btn btn-circle btn-xl"  (click)="buttonClicked(i)" [disabled]="selecciono" ></button>
+                </div>
+                               
             </div>
-        </div>
-        
-        <div class="container">
-            <div class="center" *ngIf="selecciono">
-                
-                <!---* Color 1 -->
-                <div *ngIf="selecciono1">
-                    <div *ngIf="estado1 ;then content1 else other_content1"></div>
-                    <ng-template #content1>
-                        
-                        <button mat-mini-fab style="background-color: green; color:white; margin-right: 20px; margin-left: 70px;margin-top: 30px;" >
-                            <mat-icon>done</mat-icon>
-                        </button>
-                        
-                    </ng-template>
-                    <ng-template #other_content1>
-                        <button mat-mini-fab style="background-color: red; color:white; margin-right: 20px; margin-left: 70px;margin-top: 30px;" >
-                            <mat-icon>close</mat-icon>
-                        </button>
-                    </ng-template>
+            <div class="row" style="justify-content: center; margin:0 auto; margin-top: 15px ;" *ngIf="selecciono">
+                <div class="col col-lg-1">
+                    <div *ngIf="selecciono1">
+                        <div *ngIf="estado1 ;then content1 else other_content1"></div>
+                        <ng-template #content1>
+                            
+                            <button mat-mini-fab style="background-color: green; color:white; " disabled>
+                                <mat-icon>done</mat-icon>
+                            </button>
+                            
+                        </ng-template>
+                        <ng-template #other_content1>
+                            <button mat-mini-fab style="background-color: red; color:white; "  disabled>
+                                <mat-icon>close</mat-icon>
+                            </button>
+                        </ng-template>
 
+                    </div>
                 </div>
-                
-                
-                <!---* Color 2 -->
-                <div *ngIf="selecciono2">
-                    <div *ngIf="estado2;then content2 else other_content2"></div>
-                    <ng-template #content2>
-                        
-                        <button mat-mini-fab style="background-color: green; color:white; margin-right: 20px; margin-left: 70px;margin-top: 30px;" >
-                            <mat-icon>done</mat-icon>
-                        </button>
-                        
-                    </ng-template>
-                    <ng-template #other_content2>
-                        <button mat-mini-fab style="background-color: red; color:white; margin-right: 20px; margin-left: 70px;margin-top: 30px;" >
-                            <mat-icon>close</mat-icon>
-                        </button>
-                    </ng-template>
-                </div>
+                <div class="col col-lg-1">
+                    <div *ngIf="selecciono2">
+                        <div *ngIf="estado2 ;then content2 else other_content2"></div>
+                        <ng-template #content2>
+                            
+                            <button mat-mini-fab style="background-color: green; color:white;" disabled>
+                                <mat-icon>done</mat-icon>
+                            </button>
+                            
+                        </ng-template>
+                        <ng-template #other_content2>
+                            <button mat-mini-fab style="background-color: red; color:white;"  disabled>
+                                <mat-icon>close</mat-icon>
+                            </button>
+                        </ng-template>
 
-                <!---* Color 3 -->
-                <div *ngIf="selecciono3">
-                    <div *ngIf="estado3;then content3 else other_content3"></div>
-                    <ng-template #content3>
-                        
-                        <button mat-mini-fab style="background-color: green; color:white; margin-right: 20px; margin-left: 70px;margin-top: 30px;" >
-                            <mat-icon>done</mat-icon>
-                        </button>
-                        
-                    </ng-template>
-                    <ng-template #other_content3>
-                        <button mat-mini-fab style="background-color: red; color:white; margin-right: 20px; margin-left: 70px;margin-top: 30px;" >
-                            <mat-icon>close</mat-icon>
-                        </button>
-                    </ng-template>
+                    </div>
+                </div>
+                <div class="col col-lg-1">
+                    <div *ngIf="selecciono3">
+                        <div *ngIf="estado3 ;then content3 else other_content3"></div>
+                        <ng-template #content3>
+                            
+                            <button mat-mini-fab style="background-color: green; color:white;" disabled>
+                                <mat-icon>done</mat-icon>
+                            </button>
+                            
+                        </ng-template>
+                        <ng-template #other_content3>
+                            <button mat-mini-fab style="background-color: red; color:white;"  disabled>
+                                <mat-icon>close</mat-icon>
+                            </button>
+                        </ng-template>
+
+                    </div>
                 </div>
             </div>
+            
         </div>
+        <br>
         
+        
+
        
         
     
@@ -97,3 +97,26 @@
 </div>
 
 
+<ng-template #contenido let-modal id='contenido'>
+   
+    <div class="modal-body" style=" text-align: center;">
+        <br>
+        <br>
+        <h2 style="color: black; font-weight: 800; font-size: 45px;">RESULTADO</h2>
+        <br>
+        <h5 style="color: gray; font-weight: 600; font-size: 15px;"> Tu desempeño fue de: </h5>
+        <br>
+        <br>
+        <h1 style="color: blue; font-weight: 800; font-size: 75px;"> {{porcentaje}}% </h1>
+        <br>
+        <br>
+        <br>
+        
+        <button type="button" class="btn btn-success" (click)="modal.close(); reiniarJuego()">CONTINUAR</button>
+        <br>
+        <br>
+    </div>
+    
+    
+    
+</ng-template>

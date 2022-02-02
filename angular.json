@@ -103,7 +103,8 @@
             "scripts": [
               "node_module/jquery/dist/jquery.min.js",
               "node_module/@popperjs/core/dist/umd/popper.min.js",
-              "node_module/bootstrap/dist/css/bootstrap.min.css"
+              "node_module/bootstrap/dist/css/bootstrap.min.css",
+              "bower_components/jquery/dist/jquery.min.js"
             ]
           }
         }

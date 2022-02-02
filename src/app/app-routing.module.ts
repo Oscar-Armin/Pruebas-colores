@@ -12,10 +12,6 @@ const routes: Routes = [
     loadChildren: () => import('./game/game.module').then(m => m.GameModule)
   },
   {
-    path: 'result',
-    loadChildren: () => import('./result/result.module').then(m => m.ResultModule)
-  },
-  {
     path: '**',
     loadChildren: () => import('./page-not-found/page-not-found.module').then(m => m.PageNotFoundModule)
   },

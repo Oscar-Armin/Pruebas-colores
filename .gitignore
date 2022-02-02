@@ -1,11 +1,12 @@
 .DS_STORE
-
+.angular
+./vscode
 /dist/
 /bazel-out
 /integration/bazel/bazel-*
 *.log
 node_modules
-
+bower_components
 # Include when developing application packages.
 pubspec.lock
 .c9
