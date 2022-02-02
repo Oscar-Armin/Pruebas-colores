@@ -88,18 +88,6 @@
     letter-spacing:0.3em;
 }
 
-.h1{
-  color: blue;
-  font-weight: 700;
-}
-
-.h2{
-  color: black;
-  font-size: 35px;
-  font-weight: 600;
-  align-items: center; 
-  justify-content: center;
-}
-.h5{
-
+.buttonR{
+  width:450px;
 }
