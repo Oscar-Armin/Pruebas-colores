@@ -138,7 +138,11 @@ export class GameComponent implements OnInit {
       }
 
 
-      this.porcentaje += 20;
+      if ( this.porcentaje !== 100){
+        this.porcentaje += 20;
+      }
+
+      
 
     }else{
       
